@@ -1,0 +1,91 @@
+// lib/ufoTerms.ts
+
+export const ufoTerms = [
+  "THE BLACK VAULT",
+  "UFO",
+  "IIAF",
+  "F-4",
+  "Mehrabad",
+  "Shahrokhi",
+  "UHF",
+  "INS",
+  "Tehran",
+  "Imperial Iranian Air Force",
+  "command post",
+  "interphone",
+  "Kilo Zulu",
+  "NM",
+  "USDAO",
+  "DIA",
+  "WASHDC",
+  "CINCUSAFE",
+  "RUEKJCS",
+  "RUFRBAA",
+  "RUDOECA",
+  "RHFRAAB",
+  "RUSNAAA",
+  "USCINCEUR",
+  "SECDEF",
+  "DEPSECDEF",
+  "WHITE HOUSE",
+  "CIA",
+  "NSA",
+  "CSAF",
+  "CNO",
+  "CSA",
+  "SEP",
+  "HRS",
+  "COMIDEASTFOR",
+  "GE/INCF",
+  "ECJ-2",
+  "IR",
+  "IPSP",
+  "PT-1440",
+  "BLACK VAULT",
+  "FOIA",
+  "PDF",
+  "HTTP",
+  "WWW",
+  "ROUTING AND TRANSMITTAL SLIP",
+  "OPTIONAL FORM 41",
+  "U.S. G.P.O.",
+  "DECLASSIFICATION INSTRUCTIONS",
+  "EXECUTIVE ORDER",
+  "EVALUATOR'S RELEASE",
+  "DISCLOSURE GUIDANCE",
+  "USABILITY OF INFORMATION",
+  "REMARKS",
+  "ACTION",
+  "DISTR",
+  "TRANSIT",
+  "FM",
+  "TO",
+  "INFO",
+  "BT",
+  "REPORTED UFO SIGHTING",
+  "FOIA",
+  "UAP",
+  "Jacques Vallee",
+  "cigar",
+  "flying saucer",
+  "flying disc",
+  "orb",
+  "anomaly",
+  "anomalities",
+  "jacques vallee",
+  "allen hynek",
+  "roger leir",
+];
+
+export function addCustomDictionary(text: string): string {
+  const terms = new Set(ufoTerms.map((term) => term.toUpperCase()));
+  return text
+    .split(/\s+/)
+    .map((word) => {
+      if (terms.has(word.toUpperCase())) {
+        return word.toUpperCase();
+      }
+      return word;
+    })
+    .join(" ");
+}
